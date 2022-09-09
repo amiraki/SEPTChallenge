@@ -1,22 +1,34 @@
 package com.s3437237.itemmanagement.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="item_management")
 public class Item {
-    public Item(){
-    }
-    private String id;
+
+    @Id
+    @Column
+    private int id;
     private String name;
     private String desc;
     private double price;
-    public Item(String id, String name, String desc, double price) {
+    public Item(int id, String name, String desc, double price) {
+        super();
         this.id = id;
         this.name = name;
         this.desc = desc;
         this.price = price;
     }
-    public String getId() {
+
+    public Item() {}
+
+    public int getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getName() {
